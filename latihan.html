@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Daftar Movie List Vania</h1>
+
+    <input type="text" id="text" placeholder="tulis nama movie">
+    <input  id="button" type="button" value="tambahkan">
+    <ul id="list">
+        
+    </ul>
+
+    <script>
+        const text = document.getElementById("text");
+        const button = document.getElementById("button");
+        const list = document.getElementById("list");
+
+        button.addEventListener("click", function (){
+            const textv = text.value;
+            if(textv !== ""){
+                const li = document.createElement("li");
+                
+                
+
+
+                li.textContent = textv;
+                list.appendChild(li);
+                text.value = "";
+
+            }
+
+            else {
+                alert("Tidak Boleh Kosong");
+            }
+        })
+
+    </script>
+</body>
+</html>
