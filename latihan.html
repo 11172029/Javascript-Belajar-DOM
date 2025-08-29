@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Daftar Movie List Vania</h1>
+    <h1>Movie Watch List Vania</h1>
 
-    <input type="text" id="text" placeholder="tulis nama movie">
-    <input  id="button" type="button" value="tambahkan">
+    <input type="text" id="text" placeholder="add movie list">
+    <input  id="button" type="button" value="Add">
     <ul id="list">
         
     </ul>
@@ -19,17 +19,61 @@
         const text = document.getElementById("text");
         const button = document.getElementById("button");
         const list = document.getElementById("list");
+        let itemEdit = null;
 
         button.addEventListener("click", function (){
             const textv = text.value;
             if(textv !== ""){
+                if(itemEdit){
+                    const span = itemEdit.querySelector("span");
+                    span.textContent = textv;
+                    itemEdit = null;
+                    button.style.backgroundColor = "";
+                    button.style.color = "";
+                    button.value = "Add";
+                    
+                }else{
+
                 const li = document.createElement("li");
+                const spanText = document.createElement("span");
+                spanText.textContent = textv;
+                li.appendChild(spanText);
+                // button edit
+
+                const btnEdit = document.createElement("button");
+                btnEdit.addEventListener("click", function () {
+                    text.value = spanText.textContent;
+                    button.value = "Update";
+                    itemEdit = li;
+                });
+                
+                btnEdit.classList.add("btnedit")
+                btnEdit.textContent = "Edit";
                 
                 
+                const rmvbtn = document.createElement("button");
+                rmvbtn.addEventListener("click", function () {
+                    if (confirm("Will Delete This List?")){
+                        li.remove();
+                    }
+                    if (itemEdit == li){
+                        itemEdit = null;
+                        button.style.backgroundColor = "";
+                        button.style.color = "";
+                        button.value = "Add"
+                        text.value = "";
+                    }
+                });
+                rmvbtn.classList.add("btnhapus")
+                rmvbtn.textContent = "Hapus";
+                
 
+                li.appendChild(btnEdit);
+                li.appendChild(rmvbtn);
 
-                li.textContent = textv;
+                //kirim ke ul
                 list.appendChild(li);
+            }
                 text.value = "";
 
             }

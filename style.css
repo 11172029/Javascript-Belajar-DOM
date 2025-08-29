@@ -5,10 +5,12 @@ body {
   color: #333;
 }
 
-h2 {
-  font-size: 24px;
+h1 {
+  font-size: 40px;
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: #3a0202;
+  margin-top: 2%;
+  margin-left: 36%;
 }
 
 input[id="text"] {
@@ -19,7 +21,9 @@ input[id="text"] {
   font-size: 16px;
   transition: border-color 0.3s ease;
   background-color: rgb(252, 245, 248);
-  box-shadow: #767575 2px 2px 2px;
+  box-shadow: #ababab 0px 2px 2px;
+  margin-left: 34%;
+  margin-top: 2%;
 }
 
 input:focus {
@@ -32,6 +36,7 @@ input[id="button"] {
   background-color: #f9f7f9;
   color: rgb(11, 11, 11);
   border: none;
+  box-shadow: #aba9a9 0px 2px 2px;
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
@@ -47,6 +52,7 @@ ul {
   margin-top: 30px;
   padding-left: 20px;
   list-style-type: none;
+  width: 60%;
 }
 
 li {
@@ -54,12 +60,33 @@ li {
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(45, 45, 45, 0.1);
   transition: transform 0.2s ease;
 }
 
 li:hover {
   transform: scale(1.02);
+}
+
+.btnedit{
+  background-color: rgba(108, 206, 10, 0.689);
+  border-radius: 6px;
+  border: none;
+  color: white;
+  box-shadow: #7d7d7d 0px 1px 1px;
+  margin-left: 60%;
+  height: 25px;
+  width: 60px; ;
+}
+
+.btnhapus{
+  background-color: rgba(246, 17, 17, 0.689);
+  border-radius: 6px;
+  border: none;
+  color: white;
+  box-shadow: #7d7d7d 0px 1px 1px;
+  height: 25px;
+  width: 60px;
 }
 
     
